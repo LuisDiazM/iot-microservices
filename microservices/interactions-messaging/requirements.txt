@@ -1,0 +1,5 @@
+nats-python==0.8.0
+pycodestyle==2.7.0
+pymongo==3.11.4
+python-dotenv==0.17.1
+toml==0.10.2
