@@ -30,7 +30,8 @@ class MongoImplementation(object):
 
     def insert_document(self, database: str, collection_name: str, obj_to_insert: object) -> Any:
         db = self.client[database]
-        cursor = db[collection_name].insert_one(obj_to_insert)
+        cursor = db[collection_name].insert_one(
+            obj_to_insert)
         return cursor.inserted_id.__str__()
 
 

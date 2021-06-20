@@ -29,7 +29,7 @@ services:
             ME_CONFIG_MONGODB_ADMINPASSWORD: ${ME_CONFIG_MONGODB_ADMINPASSWORD}
 
     interactions-messaging:
-        build: interactions-messaging/.
+        build: microservices/interactions-messaging/.
         image: microservice-messaging:v1
         restart: always
         depends_on: 
@@ -40,14 +40,14 @@ services:
             - subject_id=${subject_id}
             - MONGO_URL=${MONGO_URL}
     
-    # interactions-core:
-    #     build: interactions-core/.
-    #     image: backend-microservice:v1
-    #     restart: always
-    #     depends_on: 
-    #         - mongo
-    #     environment: 
-    #         - MONGO_URL=${MONGO_URL}
-    #         - PORT=${PORT_APP}
-    #     ports: 
-    #         - 5000:5000
+    interactions-core:
+        build: microservices/interactions-core/.
+        image: backend-microservice:v1
+        restart: always
+        depends_on: 
+            - mongo
+        environment: 
+            - MONGO_URL=${MONGO_URL}
+            - PORT=${PORT_APP}
+        ports: 
+            - 5000:5000

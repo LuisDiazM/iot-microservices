@@ -1,6 +1,6 @@
 from infraestructure import mongoImp
 
-mongo = mongoImp.MongoImplementation()
+mongo = mongoImp.MongoImplementation() #this is remplace by an interface
 
 
 class UseCases(object):
@@ -12,5 +12,6 @@ class UseCases(object):
 
     @staticmethod
     def register_user(user):
+        
         user_id = mongo.insert_document("iot_devices", "users", user)
         return user_id

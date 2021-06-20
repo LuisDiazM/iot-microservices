@@ -1,0 +1,16 @@
+<div nz-row>
+  <div nz-col [nzSpan]="18" [nzPush]="6">
+    <ul>
+      <li *ngFor="let item of registryDevices">
+        {{ item.created_at.$date | date: "medium" }}
+      </li>
+    </ul>
+  </div>
+  <div nz-col [nzSpan]="6" [nzPull]="18">
+    <div id="container-states">
+      <div [style.background-color]="stateColorHigh" class="circle"><p>Alto</p></div>
+      <div class="circle"><p>Medio</p></div>
+      <div class="circle"><p>Bajo</p></div>
+    </div>
+  </div>
+</div>

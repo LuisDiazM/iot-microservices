@@ -8,5 +8,5 @@ CORS(app)
 api = Api(app=app, prefix='/api/v1')
 
 
-api.add_resource(appHandlers.Main, "")
-api.add_resource(appHandlers.Registry,"/registry")
+api.add_resource(appHandlers.Main, "/readers")
+api.add_resource(appHandlers.Registry,"/sign-up")
