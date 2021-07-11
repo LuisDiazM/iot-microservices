@@ -1,16 +1,24 @@
 <div nz-row>
   <div nz-col [nzSpan]="18" [nzPush]="6">
     <ul>
-      <li *ngFor="let item of registryDevices">
-        {{ item.created_at.$date | date: "medium" }}
-      </li>
+      <h1>Pronto irá una gráfica del comportamiento de los datos</h1>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, rem?
+      Voluptates, quis fuga? Perspiciatis totam optio placeat nobis ullam ea
+      veritatis odio id maxime velit ad, amet voluptatibus ratione consectetur?
     </ul>
   </div>
   <div nz-col [nzSpan]="6" [nzPull]="18">
     <div id="container-states">
-      <div [style.background-color]="stateColorHigh" class="circle"><p>Alto</p></div>
-      <div class="circle"><p>Medio</p></div>
-      <div class="circle"><p>Bajo</p></div>
+      <div [style.background-color]="stateColorHigh" class="circle">
+        <h5>Alto</h5>
+
+      </div>
+      <div [style.background-color]="stateColorMedium" class="circle">
+        <h5>Medio</h5>
+      </div>
+      <div [style.background-color]="stateColorLow" class="circle">
+        <h5>Bajo</h5>
+      </div>
     </div>
   </div>
 </div>

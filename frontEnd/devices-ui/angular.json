@@ -113,5 +113,8 @@
       }
     }
   },
-  "defaultProject": "devices-ui"
+  "defaultProject": "devices-ui",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
