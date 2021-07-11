@@ -13,6 +13,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListDevicesRegistrysComponent } from './components/list-devices-registrys/list-devices-registrys.component';
 import { NgZorroModule } from './ng-zorro/ng-zorro.module';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { reducers } from './store/appState';
+import { DevicesFacade } from './facades/devices.facade';
 
 registerLocaleData(es);
 
@@ -25,8 +30,13 @@ registerLocaleData(es);
     HttpClientModule,
     BrowserAnimationsModule,
     NgZorroModule,
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
   ],
-  providers: [{ provide: NZ_I18N, useValue: es_ES }],
+  providers: [{ provide: NZ_I18N, useValue: es_ES }, DevicesFacade],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
